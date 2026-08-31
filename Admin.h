@@ -6,7 +6,7 @@
 using namespace std;
 class Admin : public Employee {
 public:
-    virtual void DisplayInfo() override {
+    void DisplayInfo() override {
         Employee::DisplayInfo();
     }
 };

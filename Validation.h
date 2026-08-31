@@ -6,7 +6,7 @@ class Validation {
 public:
 
 	static bool validName(string name) {
-		if (name.size() < 5 || name.size() > 20) {
+		if (name.size() < 3 || name.size() > 20) {
 			cout << "This Name is invalid ,It should have between 5 and 20 characters.\n";
 			return false;
 		}
@@ -19,7 +19,7 @@ public:
 		return true;
 	}
 	static bool validPass(string password) {
-		bool Size = true;			cout << password.size() << endl;
+		bool Size = true;
 		if (password.size() < 8 || password.size() > 20) {
 			Size = false;
 		}
@@ -33,7 +33,6 @@ public:
 		}
 
 		if (!specialChar || !Size || space) {
-			cout << specialChar << " " << Size << " " << space << endl;
 			cout << "Password must be between 8 and 20 characters, contain at least one special character,\n and must not contain spaces.\n";
 			return false;
 		}

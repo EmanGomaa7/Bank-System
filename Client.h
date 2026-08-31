@@ -61,7 +61,7 @@ public:
 
 		cout << "BALANCE : " << balance << "\n\n";
 	}
-	void DisplayInfo(){
+	void DisplayInfo() override {
 		cout << "==============INFO=============\n";
 		Person::DisplayInfo();
 		cout << "Balance   : " << balance << "\n";
