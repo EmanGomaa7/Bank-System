@@ -19,8 +19,24 @@ int main(){
 	c.setPassword(pass);
 	cout << "Enter bal :";cin >> bal;
 	c.setBalance(bal);
-
 	c.DisplayInfo();
+	cout << endl;
+	//=====================================================
+	Employee e;
+	int Id; string Name, Pass; double sal;
+	cout << " Enter id : "; cin >> Id;
+	e.setId(id);
+	cin.ignore();
+	cout << " Enter name : ";getline(cin, Name);
+	e.setName(Name);
+	cout << " Enter pass : ";getline(cin, Pass);
+	e.setPassword(Pass);
+	cout << "Enter sal :";cin >> sal;
+	e.setSalary(sal);
+	e.DisplayInfo();
+	//====================================================
+	
+
 
 	
 }

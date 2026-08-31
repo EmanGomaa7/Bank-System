@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include<cctype>
 #include<string>
 using namespace std;
 class Validation {
@@ -7,7 +8,7 @@ public:
 
 	static bool validName(string name) {
 		if (name.size() < 3 || name.size() > 20) {
-			cout << "This Name is invalid ,It should have between 5 and 20 characters.\n";
+			cout << "This Name is invalid ,It should have between 3 and 20 characters.\n";
 			return false;
 		}
 		for (int i = 0; i < name.size();i++) {
@@ -19,17 +20,18 @@ public:
 		return true;
 	}
 	static bool validPass(string password) {
-		bool Size = true;
+		
+		bool Size = true,specialChar = false, space = false;
 		if (password.size() < 8 || password.size() > 20) {
 			Size = false;
 		}
-		bool specialChar = false, space = false;
 
 		for (int i = 0; i < password.size(); i++) {
 			if (password[i] == ' ') {
 				space = true;
+				break;
 			}
-			if (ispunct(password[i]))specialChar = true;
+			if (ispunct(password[i])!= 0)specialChar = true;
 		}
 
 		if (!specialChar || !Size || space) {

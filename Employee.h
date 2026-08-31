@@ -8,7 +8,7 @@ class Employee : public Person {
 private:
     double salary;
 
-    double enterSalary(double salary) {
+    double enterSalary(double& salary) {
         bool isValid = false;
         while (!isValid) {
             if (!Validation::validSalary(salary)) {
@@ -31,6 +31,7 @@ public:
     virtual void DisplayInfo() override {
         Person::DisplayInfo();
         cout << "Salary    : " << salary << "\n";
+        cout << "==============================\n";
     }
 };
 

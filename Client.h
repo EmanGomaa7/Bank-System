@@ -8,7 +8,7 @@ using namespace std;
 class Client : public Person{
 private:
 	double balance = 0.0;
-	double enterBal(double balance) {
+	double enterBal(double& balance) {
 		bool isValid = false;
 		while (!isValid) {
 		
@@ -62,7 +62,6 @@ public:
 		cout << "BALANCE : " << balance << "\n\n";
 	}
 	void DisplayInfo() override {
-		cout << "==============INFO=============\n";
 		Person::DisplayInfo();
 		cout << "Balance   : " << balance << "\n";
 		cout << "==============================\n";
