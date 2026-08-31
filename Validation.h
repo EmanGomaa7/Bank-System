@@ -8,7 +8,6 @@ public:
 	static bool validName(string name) {
 		if (name.size() < 5 || name.size() > 20) {
 			cout << "This Name is invalid ,It should have between 5 and 20 characters.\n";
-		
 			return false;
 		}
 		for (int i = 0; i < name.size();i++) {
@@ -24,7 +23,7 @@ public:
 		if (password.size() < 8 || password.size() > 20) {
 			Size = false;
 		}
-		bool specialChar = false , space = false;
+		bool specialChar = false, space = false;
 
 		for (int i = 0; i < password.size(); i++) {
 			if (password[i] == ' ') {
@@ -32,7 +31,7 @@ public:
 			}
 			if (ispunct(password[i]))specialChar = true;
 		}
-		
+
 		if (!specialChar || !Size || space) {
 			cout << specialChar << " " << Size << " " << space << endl;
 			cout << "Password must be between 8 and 20 characters, contain at least one special character,\n and must not contain spaces.\n";
@@ -50,6 +49,13 @@ public:
 	static bool validAmount(double amount, double balance) {
 		if (amount > balance) {
 			cout << "The amount exceeds the available balance.\n";
+			return false;
+		}
+		return true;
+	}
+	static bool validSalary(double salary) {
+		if (salary < 5000) {
+			cout << "Salary must be at least 5000.\n";
 			return false;
 		}
 		return true;
