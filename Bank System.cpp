@@ -8,9 +8,10 @@
 using namespace std;
 
 int main(){
+	//testing
 	int id; string name, pass; double bal;
 	cout << " Enter id : ";cin >> id;
-	Client c;
+	Client c , b;
 	c.setId(id);
 	cin.ignore();// clear buffer
 	cout << " Enter name : ";getline(cin, name);
@@ -20,12 +21,17 @@ int main(){
 	cout << "Enter bal :";cin >> bal;
 	c.setBalance(bal);
 	c.DisplayInfo();
-	cout << endl;
+	c.deposit(300);
+	c.checkBalance();
+	c.withdraw(2200);
+	c.checkBalance();
+	c.transferTo(800, b);
+	c.checkBalance();
 	//=====================================================
 	Employee e;
 	int Id; string Name, Pass; double sal;
 	cout << " Enter id : "; cin >> Id;
-	e.setId(id);
+	e.setId(Id);
 	cin.ignore();
 	cout << " Enter name : ";getline(cin, Name);
 	e.setName(Name);

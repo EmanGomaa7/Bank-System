@@ -38,28 +38,39 @@ public:
 	void deposit(double amount) {
 		balance += amount;
 		cout << "Deposit completed successfully.\n";
+		cout << "==============================\n";
+
 	}
 	void withdraw(double amount) {
 		if (!Validation::validAmount(amount, balance)) {
 			cout << "Withdraw completed unsuccessfully.\n";
+			cout << "==============================\n";
+
 			return;
 		}
 		balance -= amount;
 		cout << "Withdraw completed successfully.\n";
+		cout << "==============================\n";
+
 	}
 	void transferTo(double amount, Client& recipient) {
 		if (!Validation::validAmount(amount, balance)) {
 			cout << "Transfer completed Unsuccessfully.\n";
+			cout << "==============================\n";
+
 			return;
 		}
 		recipient.balance += amount;
 		balance -= amount;
 		cout << "Transfer completed successfully.\n";
+		cout << "==============================\n";
+
 	}
 	void checkBalance() {
 		cout << "\n\n";
+		cout << "BALANCE : " << balance <<"\n";
+		cout << "==============================\n";
 
-		cout << "BALANCE : " << balance << "\n\n";
 	}
 	void DisplayInfo() override {
 		Person::DisplayInfo();

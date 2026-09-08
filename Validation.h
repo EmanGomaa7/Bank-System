@@ -19,6 +19,7 @@ public:
 		}
 		return true;
 	}
+
 	static bool validPass(string password) {
 		
 		bool Size = true,specialChar = false, space = false;
@@ -40,13 +41,15 @@ public:
 		}
 		return true;
 	}
+
 	static bool validBal(double balance) {
 		if (balance < 1500) {
-			cout << "This balance is below the minimum limit.\n";
+			cout << "This balance is below the minimum limit(1500).\n";
 			return false;
 		}
 		return true;
 	}
+
 	static bool validAmount(double amount, double balance) {
 		if (amount > balance) {
 			cout << "The amount exceeds the available balance.\n";
@@ -54,6 +57,7 @@ public:
 		}
 		return true;
 	}
+
 	static bool validSalary(double salary) {
 		if (salary < 5000) {
 			cout << "Salary must be at least 5000.\n";
