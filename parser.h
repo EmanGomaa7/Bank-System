@@ -7,7 +7,7 @@
 #include "Admin.h"
 using namespace std;
 
-class Parse {
+class Parser {
 public:
 
 	// id#name#bal#pass

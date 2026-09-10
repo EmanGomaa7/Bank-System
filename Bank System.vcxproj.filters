@@ -33,7 +33,7 @@
     <ClCompile Include="Validation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="parse.cpp">
+    <ClCompile Include="parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FilesHelper.cpp">
@@ -62,7 +62,7 @@
     <ClInclude Include="Validation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="parse.h">
+    <ClInclude Include="parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FilesHelper.h">
