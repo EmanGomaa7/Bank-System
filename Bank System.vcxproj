@@ -126,16 +126,32 @@
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Bank System.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="DataSourceInterface.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="FilesHelper.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="parse.cpp" />
     <ClCompile Include="Validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="Client.h" />
+    <ClInclude Include="DataSourceInterface.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="FileManager.h" />
+    <ClInclude Include="FilesHelper.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="parse.h" />
     <ClInclude Include="Validation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Admins.txt" />
+    <Text Include="Clients.txt" />
+    <Text Include="Employees.txt" />
+    <Text Include="lastIdAdmin.txt" />
+    <Text Include="lastIdClient.txt" />
+    <Text Include="lastIdEmployee.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,7 +6,7 @@
 using namespace std;
 class Employee : public Person {
 private:
-    double salary;
+    double salary = 0.0;
 
     double enterSalary(double& salary) {
         bool isValid = false;
