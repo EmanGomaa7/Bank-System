@@ -20,12 +20,12 @@ int FilesHelper::getLast(string fileName) {
 
 void FilesHelper::saveClient(Client client) {
 	ofstream save("Clients.txt", ios::app);
-	int l = FilesHelper::getLast("lastIdClient.txt") + 1;
-	string line = to_string(l + 1) + '-' + client.getName() + '-' + to_string(client.getBalance()) + '-' + client.getPassword();
+	int id = FilesHelper::getLast("lastIdClient.txt") + 1;
+	string line = to_string(id + 1) + '-' + client.getName() + '-' + to_string(client.getBalance()) + '-' + client.getPassword();
 	save << line << endl;
 	save.close();
 	ofstream saveID("lastIdClient.txt");
-	saveID << l ;
+	saveID << id ;
 	saveID.close();
 
 }
