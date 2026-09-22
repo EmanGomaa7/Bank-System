@@ -1,13 +1,19 @@
 #pragma once
 #include<iostream>
-#include<string>
-#include"Validation.h"
 #include"Employee.h"
+#include<string>
+
 using namespace std;
+
+
 class Admin : public Employee {
 public:
-    void DisplayInfo() override {
-        Employee::DisplayInfo();
-    }
+    void addEmployee(Employee& employee);
+
+    Employee* searchEmployee(int id);
+     
+    void editEmployee(int id, string name, string password, double salary);
+
+    void listEmployee();
 };
 

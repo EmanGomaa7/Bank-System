@@ -1,37 +1,21 @@
 #pragma once
-#include<iostream>
-#include<string>
-#include"Validation.h"
-#include"Person.h"
+#include"Client.h"
+
 using namespace std;
+
 class Employee : public Person {
 private:
     double salary = 0.0;
 
-    double enterSalary(double& salary) {
-        bool isValid = false;
-        while (!isValid) {
-            if (!Validation::validSalary(salary)) {
-                cout << "Please try again.\n";
-                cout << "Enter your salary : ";
-                cin >> salary;
-            }
-            else isValid = true;
-        }
-        return salary;
-    }
+    double enterSalary(double& salary);
 
 public:
-    void setSalary(double salary) {
-        this->salary = enterSalary(salary);
-    }
-    double getSalary() {
-        return salary;
-    }
-    virtual void DisplayInfo() override {
-        Person::DisplayInfo();
-        cout << "Salary    : " << salary << "\n";
-        cout << "==============================\n";
-    }
+    void setSalary(double salary);
+    double getSalary();
+    virtual void DisplayInfo() override;
+    void addClient(Client& client);
+    Client* searchClient(int id);
+    void listClient();
+    void editClient(int id, string name, string password, double balance);
 };
 

@@ -1,72 +1,28 @@
 #pragma once
 #include<iostream>
-#include"Validation.h"
+#include<string>
 using namespace std;
 class Person
 {
-private :
+private:
 	int id;
 	string name, password;
-	string enterName(string& name) {
-		bool isValid = false;
-		while (!isValid) {
-			
-			if (!(Validation::validName(name))){
-				cout << "Please try again . \n";
-				cout << "Enter your name : ";
-				getline(cin, name);
-			}
-			else isValid = true;
-		}
-		return name;
-	}
-	string enterPass(string& password) {
-		bool isValid = false;
-		while (!isValid) {
-			if (!(Validation::validPass(password))) {
-				cout << "Please try again \n";
-				cout << "Enter your password : ";
-				getline(cin, password);
-			}
-			else isValid = true;
-
-		}
-		return password;
-	}
+	string enterName(string& name);
+	string enterPass(string& password);
 public:
-	
+
 	//Setters:
-	void setId(int id) {
-		this->id = id;
-	}
-	void setName(string name) {
-		string Name = enterName(name);
-		this->name = Name;
-	}
-	void setPassword(string password) {
-		string pass = enterPass(password);
-		this->password = pass;
-	}
+	void setId(int id);
+	void setName(string name);
+	void setPassword(string password);
 
 	//Getters:
-	int getId() {
-		return id;
-	}
-	string getName() {
-		return name;
-	} 
-	string getPassword() {
-		return password;
-	}
-	
+	int getId();
+	string getName();
+	string getPassword();
+
 	//Method:
-	virtual void DisplayInfo() {
-		cout << "==============INFO=============\n";
-		cout << "Id        : " << id << "\n";
-		cout << "Name      : " << name << "\n";
-		cout << "password  : " << password << "\n";
-	}
-	
-	
+	virtual void DisplayInfo();
+
 };
 

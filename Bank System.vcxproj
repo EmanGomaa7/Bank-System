@@ -131,7 +131,7 @@
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="FilesHelper.cpp" />
     <ClCompile Include="Person.cpp" />
-    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Validation.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,7 +142,7 @@
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="FilesHelper.h" />
     <ClInclude Include="Person.h" />
-    <ClInclude Include="parser.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="Validation.h" />
   </ItemGroup>
   <ItemGroup>
