@@ -4,6 +4,8 @@
 #include "Client.h"
 #include "ClientManger.h"
 #include "FilesHelper.h"
+#include "EmployeeManager.h"
+#include "AdminManager.h"
 
 void Screens::bankName(){
 	cout << " ________________________________________________________\n";
@@ -78,38 +80,31 @@ void Screens::loginScreen(int choice){
 		break;
 	}
 	case 2: {
-		/*
-		EmployeeManger::login(id,password);
-		Employee* employeee = EmployeeManger::login(id, password);
+		Employee* employee = EmployeeManager::login(id, password);
 		if (employee == nullptr) {
 			Screens::invalid(choice);
 		}
 		else {
 			bool flag = true;
 			while (flag) {
-				flag = EmployeeManger::employeeOptions(employee);
+				flag = EmployeeManager::employeeOptions(employee);
 			}
 			Screens::logout();
 		}
-		*/
 		break;
 	}
 	case 3: {
-		//AdminManger::login(id,password);
-		/*
-		AdminManger::login(id,password);
-		Admin* admin = AdminManger::login(id, password);
+		Admin* admin = AdminManager::login(id, password);
 		if (admin == nullptr) {
 			Screens::invalid(choice);
 		}
 		else {
 			bool flag = true;
 			while (flag) {
-				flag = AdminManger::adminOptions(admin);
+				flag = AdminManager::AdminOptions(admin);
 			}
 			Screens::logout();
 		}
-		*/
 		break;
 	}
 	}
