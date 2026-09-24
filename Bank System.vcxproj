@@ -124,25 +124,33 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="AdminManager.cpp" />
     <ClCompile Include="Bank System.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="ClientManger.cpp" />
     <ClCompile Include="DataSourceInterface.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="EmployeeManager.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="FilesHelper.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Screens.cpp" />
     <ClCompile Include="Validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
+    <ClInclude Include="AdminManager.h" />
     <ClInclude Include="Client.h" />
+    <ClInclude Include="ClientManger.h" />
     <ClInclude Include="DataSourceInterface.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="EmployeeManager.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="FilesHelper.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Parser.h" />
+    <ClInclude Include="Screens.h" />
     <ClInclude Include="Validation.h" />
   </ItemGroup>
   <ItemGroup>
