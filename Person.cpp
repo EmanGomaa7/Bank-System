@@ -60,7 +60,6 @@ using namespace std;
 	void Person::DisplayInfo() {
 		cout << "Id        : " << id << "\n";
 		cout << "Name      : " << name << "\n";
-		cout << "password  : " << password << "\n";
 	}
 
 

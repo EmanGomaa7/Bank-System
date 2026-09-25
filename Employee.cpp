@@ -31,16 +31,14 @@
     }
 
     void Employee::addClient(Client& client) {
-        cout << "============Add===========\n";
         FileManager fm;
         fm.addClient(client);
         cout << "Client added successfully.\n";
     }
+
     Client* Employee::searchClient(int id) {
-        cout << "==========Search==========\n";
         if (id > 0 && id <= FilesHelper::Clients.size()) {
-            Client* client = new Client(FilesHelper::Clients[id - 1]);
-            return client;
+            return &FilesHelper::Clients[id - 1];
         }
         return nullptr;
 
@@ -53,14 +51,10 @@
 
     }
     void Employee::editClient(int id, string name, string password, double balance) {
-        cout << "===========Edit===========\n";
 
-        if (id < 1 || id > FilesHelper::Clients.size()) {
-            cout << "This id doesn't exist.\n";
-            return;
-        }
         FileManager fm;
         FilesHelper::Clients[id - 1].setId(id);
+        cin.ignore();
         FilesHelper::Clients[id - 1].setName(name);
         FilesHelper::Clients[id - 1].setPassword(password);
         FilesHelper::Clients[id - 1].setBalance(balance);

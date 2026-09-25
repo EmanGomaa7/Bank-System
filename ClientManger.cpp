@@ -45,14 +45,13 @@ Client* ClientManger::login(int id, string password){
 		if (id > 0 && id <= FilesHelper::Clients.size() && password == FilesHelper::Clients[id-1].getPassword()) {
 		 	cout << "Login Successfully.\n";
 			cout << "Welcome ," << FilesHelper::Clients[id-1].getName() << "\n";
-			Client* client = new Client(FilesHelper::Clients[id-1]);
-			return client;
+			return &FilesHelper::Clients[id - 1];
 		}
 	
 	return nullptr;
 }
 bool ClientManger::clientOptions(Client* client){
-	ClientManger::printClientMenu();
+	printClientMenu();
 	cout << "Enter your choice:";
 	int choice; cin >> choice;
 	switch (choice) {
@@ -89,7 +88,7 @@ bool ClientManger::clientOptions(Client* client){
 		break;
 	}
 	case 5: {
-		ClientManger::updatePassword(client);
+		updatePassword(client);
 		break;
 	}
 	case 6: {

@@ -38,6 +38,8 @@ void AdminManager::updatePassword(Admin* admin) {
 }
 
 void AdminManager::newEmployee(Admin* admin) {
+	cout << "==============Add new employee==============\n";
+
 	Employee e;
 	string name, password;
 	double salary;
@@ -60,6 +62,8 @@ void AdminManager::newEmployee(Admin* admin) {
 }
 
 void AdminManager::searchForEmployee(Admin* admin) {
+	cout << "====================Search==================\n";
+
 	int id;
 	cout << "Enter employee id :";
 	cin >> id;
@@ -69,7 +73,6 @@ void AdminManager::searchForEmployee(Admin* admin) {
 		return;
 	}
 	e->DisplayInfo();
-	delete e;
 }
 
 void AdminManager::listAllEmployees(Admin* admin) {
@@ -77,6 +80,8 @@ void AdminManager::listAllEmployees(Admin* admin) {
 }
 
 void AdminManager::editEmployeeInfo(Admin* admin) {
+	cout << "==============Edit employee info============\n";
+
 	int id;
 	string name, password;
 	double salary;
@@ -85,10 +90,10 @@ void AdminManager::editEmployeeInfo(Admin* admin) {
 	cin >> id;
 	Employee* e = admin->searchEmployee(id);
 	if (e == nullptr) {
+
 		cout << "No employee found with this ID.\n";
 		return;
 	}
-	delete e;
 
 	cout << "Enter new name :";
 	cin >> ws;
@@ -131,6 +136,7 @@ bool AdminManager::AdminOptions(Admin* admin) {
 	case 11: return false;
 	default:
 		cout << "Invalid choice.\n";
+		return false;
 	}
 	return true;
 }

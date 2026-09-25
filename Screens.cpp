@@ -54,8 +54,8 @@ void Screens::invalid(int choice) {
 	loginScreen(choice);
 }
 void Screens::logout(){
-	Screens::loginOptions();
-	Screens::loginScreen(Screens::loginAs());
+	loginOptions();
+	loginScreen(loginAs());
 }
 void Screens::loginScreen(int choice){
 	cout << "Enter the id :";
@@ -68,42 +68,42 @@ void Screens::loginScreen(int choice){
 	case 1: {
 		Client* client = ClientManger::login(id, password);
 		if (client == nullptr) {
-			Screens::invalid(choice);
+			invalid(choice);
 		}
 		else {
 			bool flag = true;
 			while (flag) {
 				flag = ClientManger::clientOptions(client);
 			}
-			Screens::logout();
+			logout();
 		}
 		break;
 	}
 	case 2: {
 		Employee* employee = EmployeeManager::login(id, password);
 		if (employee == nullptr) {
-			Screens::invalid(choice);
+			invalid(choice);
 		}
 		else {
 			bool flag = true;
 			while (flag) {
 				flag = EmployeeManager::employeeOptions(employee);
 			}
-			Screens::logout();
+			logout();
 		}
 		break;
 	}
 	case 3: {
 		Admin* admin = AdminManager::login(id, password);
 		if (admin == nullptr) {
-			Screens::invalid(choice);
+			invalid(choice);
 		}
 		else {
 			bool flag = true;
 			while (flag) {
 				flag = AdminManager::AdminOptions(admin);
 			}
-			Screens::logout();
+			logout();
 		}
 		break;
 	}
@@ -115,9 +115,9 @@ void Screens::runApp(){
 	FilesHelper::fetchEmployees();
 	FilesHelper::fetchAdmins();
 
-	Screens::welcome();
-	Screens::bankName();
+	welcome();
+	bankName();
 
-	Screens::loginOptions();
-    Screens::loginScreen(Screens::loginAs());
+	loginOptions();
+    loginScreen(Screens::loginAs());
 }

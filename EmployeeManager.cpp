@@ -1,6 +1,7 @@
 #include "EmployeeManager.h"
 #include "FilesHelper.h"
 #include "FileManager.h"
+#include "ClientManger.h"
 
 void EmployeeManager::printEmployeeMenu() {
 	cout << "===============EMPLOYEE MENU=================\n\n";
@@ -33,6 +34,8 @@ void EmployeeManager::updatePassword(Employee* employee) {
 }
 
 void EmployeeManager::newClient(Employee* employee) {
+	cout << "===============Add new client===============\n";
+
 	Client c;
 	string name, password;
 	double balance;
@@ -59,6 +62,8 @@ void EmployeeManager::listAllClients(Employee* employee) {
 }
 
 void EmployeeManager::searchForClient(Employee* employee) {
+	cout << "===================Search===================\n";
+
 	int id;
 	cout << "Enter client id :";
 	cin >> id;
@@ -68,10 +73,11 @@ void EmployeeManager::searchForClient(Employee* employee) {
 		return;
 	}
 	c->DisplayInfo();
-	delete c;
 }
 
 void EmployeeManager::editClientInfo(Employee* employee) {
+	cout << "==============Edit client info===============\n";
+
 	int id;
 	string name, password;
 	double balance;
@@ -83,14 +89,13 @@ void EmployeeManager::editClientInfo(Employee* employee) {
 		cout << "No client found with this ID.\n";
 		return;
 	}
-	delete c;
 
-	cout << "Enter new name :";
+	cout << "Enter new name     :";
 	cin >> ws;
 	getline(cin, name);
 	cout << "Enter new password :";
 	getline(cin, password);
-	cout << "Enter new balance :";
+	cout << "Enter new balance  :";
 	cin >> balance;
 
 	employee->editClient(id, name, password, balance);
@@ -122,6 +127,7 @@ bool EmployeeManager::employeeOptions(Employee* employee) {
 	case 7: return false;
 	default:
 		cout << "Invalid choice.\n";
+		return false;
 	}
 	return true;
 }
