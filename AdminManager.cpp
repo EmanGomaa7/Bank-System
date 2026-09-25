@@ -10,12 +10,15 @@ void AdminManager::printAdminMenu() {
 	cout << "3.Search for client.\n";
 	cout << "4.List all clients.\n";
 	cout << "5.Edit client info.\n";
-	cout << "6.Add new employee.\n";
-	cout << "7.Search for employee.\n";
-	cout << "8.List all employees.\n";
-	cout << "9.Edit employee info.\n";
-	cout << "10.Update password.\n";
-	cout << "11.Logout.\n\n";
+	cout << "6.Remove all clients data.\n";
+	cout << "7.Add new employee.\n";
+	cout << "8.Search for employee.\n";
+	cout << "9.List all employees.\n";
+	cout << "10.Edit employee info.\n";
+	cout << "11.Remove all employees data.\n";
+	cout << "12.Remove all Admins data.\n";
+	cout << "13.Update password.\n";
+	cout << "14.Logout.\n\n";
 }
 
 void AdminManager::updatePassword(Admin* admin) {
@@ -128,12 +131,51 @@ bool AdminManager::AdminOptions(Admin* admin) {
 	case 3:  EmployeeManager::searchForClient(admin); break;
 	case 4:  EmployeeManager::listAllClients(admin); break;
 	case 5:  EmployeeManager::editClientInfo(admin); break;
-	case 6:  newEmployee(admin); break;
-	case 7:  searchForEmployee(admin); break;
-	case 8:  listAllEmployees(admin); break;
-	case 9:  editEmployeeInfo(admin); break;
-	case 10: updatePassword(admin); break;
-	case 11: return false;
+	case 6:  {
+		cout << "==========Remove all Clients data===========\n";
+		cout << "WARNING: This action will permanently delete all clients data.\n";
+		cout << "Are you sure you want to continue? (y/n): ";
+		char ans; cin >> ans;
+		if (ans == 'Y' || ans == 'y') {
+			FileManager fm; fm.removeAllClients();
+			cout << "All clients data has been removed successfully.\n";
+		}
+		else {
+			cout << "Operation cancelled.\n";
+		}
+	} break;
+	case 7:  newEmployee(admin); break;
+	case 8:  searchForEmployee(admin); break;
+	case 9:  listAllEmployees(admin); break;
+	case 10:  editEmployeeInfo(admin); break;
+	case 11: { 
+		cout << "=========Remove all Employees data=========\n";
+		cout << "WARNING: This action will permanently delete all employees data.\n";
+		cout << "Are you sure you want to continue? (y/n): ";
+		char ans; cin >> ans;
+		if (ans == 'Y' || ans == 'y') {
+			FileManager fm; fm.removeAllEmployees(); 
+			cout << "All employees data has been removed successfully.\n";
+		}
+		else {
+			cout << "Operation cancelled.\n";
+		}
+		} break;
+	case 12: {
+		cout << "=========Remove all Admins data=========\n";
+		cout << "WARNING: This action will permanently delete all admins data.\n";
+		cout << "Are you sure you want to continue? (y/n): ";
+		char ans; cin >> ans;
+		if (ans == 'Y' || ans == 'y') {
+			FileManager fm; fm.removeAllAdmins();
+			cout << "All admins data has been removed successfully.\n";
+		}
+		else {
+			cout << "Operation cancelled.\n";
+		}
+	}  break;
+	case 13: updatePassword(admin); break;
+	case 14: return false;
 	default:
 		cout << "Invalid choice.\n";
 		return false;
